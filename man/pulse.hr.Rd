@@ -37,9 +37,11 @@ A worker function to calculate heart rate
 }
 \examples{
 folder <- system.file("extdata/pulse", package = "rambur")
-pulse.data <- pulse.read(folder)
-ex1 <- pulse.hr(subset(pulse.data, datetime >= "2025-05-21 00:01:00" &
-datetime <= "2025-05-21 00:02:00", channel.1, drop = TRUE))
+pulse.data <- pulse.read(folder, timezone = "Europe/Berlin")
+ex1 <- pulse.hr(subset(pulse.data,
+datetime >= as.POSIXct("2025-05-21 00:01:00", tz = "Europe/Berlin") &
+datetime < as.POSIXct("2025-05-21 00:02:00", tz = "Europe/Berlin"),
+channel.1, drop = TRUE))
 }
 \seealso{
 \code{\link[=pulse.extract]{pulse.extract()}}

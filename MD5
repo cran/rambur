@@ -1,4 +1,4 @@
-972cb333afe846b10e4c04f36ea98fbb *DESCRIPTION
+4d82b343a15ab99b64f681806589f8e0 *DESCRIPTION
 38b786986614a487a025a926f3ca9a27 *NAMESPACE
 a61b1dc10af0acea8fe68a47f533f3c3 *R/add.datetime.R
 ad0120a488d6c9e502c70b2339da1f1a *R/chamber.check.R
@@ -9,7 +9,7 @@ ae6287676cde21afb4d6ed62ec1c15bd *R/chamber.design.R
 00bb2e379cf6ec540fda9dfc4bb29217 *R/plot.chamber.design.R
 30110b9dce16001daf1588024301edf4 *R/plot.chamber.diurnal.R
 4e95c339a0ec1504106d5b1c23263541 *R/pulse.extract.R
-497f1d6d126e2ada5eeeb18086ee853b *R/pulse.hr.R
+bbe6a5dc63c09f17e7ed1b8f81fc371a *R/pulse.hr.R
 a6bd529dfd19964aef6ce3860ac9a25c *R/pulse.read.R
 75e835fce47f130279209678e5aec316 *R/rambur-package.R
 82d34c144faf870d59aa6fff91441032 *R/robo.read.R
@@ -54,7 +54,7 @@ d5599795e682974a3e6724ecb9ca6bea *man/chamber.read.Rd
 7c7ef437cf02bc953418e1ad7df622a5 *man/plot.chamber.design.Rd
 f67607ff1abdbc6aada101116dab6f41 *man/plot.chamber.diurnal.Rd
 9017ba3a520e44229634605da1ff2fa0 *man/pulse.extract.Rd
-d6f38ccf7ba6dce388f56b539a916dd2 *man/pulse.hr.Rd
+f17e2505b81d37737f9921a386239ce1 *man/pulse.hr.Rd
 eeecf670e7415cef698c1a130d74c644 *man/pulse.read.Rd
 e1edd0b4bc4694b8f110dfb72a3faa55 *man/rambur-package.Rd
 fbb24fa27d4d755f14466519a6721ae8 *man/robo.read.Rd
