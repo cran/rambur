@@ -1,0 +1,60 @@
+#' Chamber: Splitting Profile
+#'
+#' A function to split the "Profile.txt" with more than 1000 lines into smaller files.
+#'
+#' @param file.path a character string, path to the original "Profile.txt" file.
+#' @param max.lines an integer, number of lines in new files.
+#' @param overlap.lines an integer, number of lines shared between two consecutive files.
+#' @param folder.path a character string, path to the new files after splitting.
+#'
+#' @return No return value, called for side effects. The function splits
+#'   "Profile.txt" and saves each part into its own subdirectory.
+#'
+#' @export
+chamber.split <- function(file.path,
+                          max.lines = 960,
+                          overlap.lines = 120,
+                          folder.path = NULL){
+
+  if (is.null(folder.path)) {
+    folder.path <- dirname(file.path)
+  }
+
+  profile <- readLines(file.path)
+  total.lines <- length(profile)
+
+  start.lines <- seq(from = 1, to = total.lines, by = max.lines - overlap.lines)
+  end.lines <- start.lines + max.lines - 1
+  end.lines[end.lines > total.lines] <- total.lines
+
+  message("splitting '", basename(file.path), "' with ", total.lines, " lines into:")
+
+  for (i in 1:length(start.lines)){
+
+    start.line <- start.lines[i]
+    end.line <- end.lines[i]
+
+    sub.profile <- profile[start.line:end.line]
+
+    start.time <- head(sub.profile, 1) %>% substr(1, 10) %>% as.numeric %>% as.POSIXct(tz = "UTC") %>% format("%Y%m%d_%H%M")
+    end.time <- tail(sub.profile, 1) %>% substr(1, 10) %>% as.numeric %>% as.POSIXct(tz = "UTC") %>% format("%Y%m%d_%H%M")
+
+    # sub.folder.path <- file.path(folder.path, sprintf("part-%02d", i))
+    sub.folder.path <- file.path(folder.path, paste0(start.time, "_to_", end.time)) #more informative sub folder names
+
+    if (!dir.exists(sub.folder.path)) {
+      dir.create(sub.folder.path, recursive = TRUE)
+    }
+
+    write.table(sub.profile, file.path(sub.folder.path, "Profile.txt"),
+                quote = FALSE,
+                row.names = FALSE,
+                col.names = FALSE)
+
+    message(sprintf("%s/Profile.txt (lines %d - %d)",
+                    sub.folder.path, start.line, end.line))
+
+  }
+
+
+}

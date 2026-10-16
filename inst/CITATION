@@ -1,0 +1,13 @@
+bibentry(
+  bibtype = "Article",
+  textVersion = "Pham, D. N., & Sokolova, I. M. (2026). Heart rate of the blue mussel Mytilus edulis in a simulated intertidal environment (p. 2026.09.28.754745). bioRxiv. https://doi.org/10.64898/2026.09.28.754745",
+  title = "Heart rate of the blue mussel Mytilus edulis in a simulated intertidal environment",
+  author = c(
+    person("Duy Nghia", "Pham"),
+    person("Inna M.", "Sokolova")
+  ),
+  journal = "bioRxiv",
+  publisher = "openRxiv",
+  year = "2026",
+  doi = "10.64898/2026.09.28.754745"
+)
